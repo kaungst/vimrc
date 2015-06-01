@@ -59,7 +59,7 @@ let mapleader = "\<Space>"
 let g:mapleader = "\<Space>"
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :w<CR>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
@@ -210,6 +210,9 @@ set wrap "Wrap lines
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
+"enter visual mode
+nmap <leader><leader> V
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -310,6 +313,15 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+"Copy paste to system clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
