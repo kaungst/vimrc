@@ -201,6 +201,11 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+nmap <Leader>a: :Tabularize /^[^:]*\zs:<CR>
+vmap <Leader>a: :Tabularize /^[^:]*\zs:<CR>
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -222,8 +227,8 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+"map <space> /
+"map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
