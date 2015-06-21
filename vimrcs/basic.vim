@@ -201,10 +201,8 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-nmap <Leader>a: :Tabularize /^[^:]*\zs:<CR>
-vmap <Leader>a: :Tabularize /^[^:]*\zs:<CR>
+nmap <Leader>a= :Tabularize /=.*/<CR>
+vmap <Leader>a= :Tabularize /=.*/<CR>
 
 
 """"""""""""""""""""""""""""""
