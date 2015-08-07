@@ -198,7 +198,7 @@ set lbr
 set tw=500
 
 set ai "Auto indent
-set si "Smart indent
+set cindent "C-style indent
 set wrap "Wrap lines
 
 nmap <Leader>a= :Tabularize /=.*/<CR>

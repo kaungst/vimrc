@@ -116,3 +116,19 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_python_checkers=['pyflakes']
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-flake8 (PEP8 checker)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:flake8_show_quickfix=1  " don't show
+let g:flake8_show_in_gutter=1  " show 
+let g:flake8_show_in_file=1  " show
+let g:flake8_error_marker='E>'     " set error marker to 'EE' 
+autocmd BufWritePost *.py call Flake8()
+function NoShow()
+    let g:flake8_show_quickfix=0
+    wq
+endfunction
+autocmd FileType python cmap wq call NoShow()
+autocmd FileType python cmap q call NoShow()
