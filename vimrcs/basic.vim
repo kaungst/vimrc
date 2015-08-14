@@ -61,6 +61,9 @@ let g:mapleader = "\<Space>"
 " Fast saving
 nmap <leader>w :w<CR>
 
+" Fast reload
+nmap <leader>e :e<CR>
+
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null

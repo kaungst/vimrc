@@ -130,5 +130,9 @@ function NoShow()
     let g:flake8_show_quickfix=0
     wq
 endfunction
+function Quit()
+    q!
+endfunction
 autocmd FileType python cmap wq call NoShow()
 autocmd FileType python cmap q call NoShow()
+autocmd FileType python cmap Q call Quit()
