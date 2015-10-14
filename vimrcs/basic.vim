@@ -61,6 +61,9 @@ let g:mapleader = "\<Space>"
 " Fast saving
 nmap <leader>w :w<CR>
 
+" Fast reload
+nmap <leader>e :e<CR>
+
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
@@ -198,7 +201,7 @@ set lbr
 set tw=500
 
 set ai "Auto indent
-set si "Smart indent
+set cindent "C-style indent
 set wrap "Wrap lines
 
 nmap <Leader>a= :Tabularize /=.*/<CR>
