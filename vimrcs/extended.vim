@@ -147,19 +147,3 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Flake8 functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:flake8_show_in_gutter=1
-let g:falke8_show_quickfix=1
-let g:flake8_show_in_file=1
-
-autocmd BufWritePost *.py call Flake8()
-
-function NoShow()
-    let g:flake8_show_quickfix=0
-    wq 
-endfunction
-autocmd FileType python noremap <Leader>q :call NoShow()<CR>

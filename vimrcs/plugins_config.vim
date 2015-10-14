@@ -121,18 +121,14 @@ let g:syntastic_python_checkers=['pyflakes']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-flake8 (PEP8 checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:flake8_show_quickfix=1  " don't show
+let g:flake8_show_quickfix=1  " show
 let g:flake8_show_in_gutter=1  " show 
 let g:flake8_show_in_file=1  " show
-let g:flake8_error_marker='E>'     " set error marker to 'EE' 
+let g:flake8_error_marker='E>'     " set error marker to 'E>' 
 autocmd BufWritePost *.py call Flake8()
+
 function NoShow()
     let g:flake8_show_quickfix=0
-    wq
+    wq 
 endfunction
-function Quit()
-    q!
-endfunction
-autocmd FileType python cmap wq call NoShow()
-autocmd FileType python cmap q call NoShow()
-autocmd FileType python cmap Q call Quit()
+autocmd FileType python noremap <Leader>q :call NoShow()<CR>
